@@ -1,0 +1,49 @@
+{
+    "name": "require-mapper",
+    "description": "Maps the local modules for an easy require access",
+    "version": "0.0.1",
+    "author": "Arik Lewin (https://github.com/lastboy)",
+    "homepage": "https://github.com/lastboy",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/lastboy/require-mapper.git"
+    },
+    "bugs": {
+        "url": "http://github.com/lastboy/require-mapper/issues"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://github.com/lastboy/require-mapper/LICENSE-MIT"
+        }
+    ],
+    "main": "rmapper",
+    "scripts": {
+        "test": "node test.js"
+    },
+    "engines": {
+        "node": ">= 0.8.0"
+    },
+    "keywords": [
+        "require",
+        "map",
+        "mapper",
+        "global"
+    ],
+    "dependencies": {
+        "typedas": "~1.0.0"
+
+    },
+    "devDependencies": {
+
+    },
+    "optionalDependencies": {
+
+    },
+
+    "contributors": [
+        "Arik Lewin (https://github.com/lastboy)"
+    ],
+    "_from": "require-mapper@~0.0.1",
+    "license": "MIT"
+}
