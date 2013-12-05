@@ -48,13 +48,14 @@ function Test3() {
         rmapper.destroy();
         rmapper.init({
             basepath: __dirname,
+            methodname: "requirexxx",
             data:{
                 "test.module": "src/TestModule.js"
             }
         });
     }
 
-    var test = _require("test.module");
+    var test = requirexxx("test.module");
     console.log("test:...", test());
 }
 
