@@ -1,6 +1,6 @@
 {
     "name": "require-mapper",
-    "description": "Maps the local modules for an easy require access",
+    "description": "Maps the project's local modules for an easy require access",
     "version": "0.0.1",
     "author": "Arik Lewin (https://github.com/lastboy)",
     "homepage": "https://github.com/lastboy",
