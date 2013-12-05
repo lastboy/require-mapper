@@ -1,15 +1,13 @@
-var _mapper = require("./src/Mapper.js");
+var _Mapper = require("./src/Mapper.js");
 
-module.exports = function() {
+module.exports = function () {
 
-    return {
-        init: _mapper.init,
+    var mapper = new _Mapper();
 
-        map: _mapper.map,
+    this.init = mapper.init;
+    this.map = mapper.map;
+    this.destroy = function () {
+        mapper.destroy();
+    }
 
-        destroy: function() {
-            _mapper.destroy();
-        }
-    };
-
-}();
+};
