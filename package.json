@@ -1,7 +1,7 @@
 {
     "name": "require-mapper",
     "description": "Maps the project's local modules for an easy require access",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "Arik Lewin (https://github.com/lastboy)",
     "homepage": "https://github.com/lastboy",
     "repository": {
@@ -19,7 +19,7 @@
     ],
     "main": "rmapper",
     "scripts": {
-        "test": "node test.js"
+        "test": "node test/test.js"
     },
     "engines": {
         "node": ">= 0.8.0"
