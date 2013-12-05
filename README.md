@@ -14,9 +14,7 @@ With simple key value mapping, the project's modules can be addressed more easil
         mapper = new Mapper();
 
 mapper.map({
-    data:{
-        "my.module": "src/My.js"
-    }
+    "my.module": "src/My.js"
 });
 </code></pre>
 
