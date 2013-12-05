@@ -24,7 +24,7 @@ module.exports = function() {
             if (config) {
                 _basepath = (config.basepath || _basepath);
                 data = ("data" in config ? config.data : undefined);
-                _methodname = ("name" in config ? config.name : _methodname);
+                _methodname = ("methodname" in config ? config.methodname : _methodname);
             }
 
             /**
