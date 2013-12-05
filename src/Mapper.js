@@ -3,16 +3,26 @@ var _path = require("path");
 module.exports = function() {
 
     var _ENUM = {
-        MAP_KEY: "require-mapper-map"
-    }, _module,
+        MAP_KEY: "require-mapper"
+
+    }, _map = {},
+        _module,
         _methodname = "_require",
         _basepath = ".",
         _me;
 
+    function _setGlobal(key, value) {
+        global[key] = value;
+    }
+
+    function _getGlobal(key) {
+        return global[key];
+    }
+
     _me = {
 
         destroy: function() {
-            global[_ENUM.MAP_KEY] = {};
+            _map = {};
             _methodname = "_require";
             _basepath = ".";
 
@@ -35,7 +45,7 @@ module.exports = function() {
              * @private
              */
             _module = function (module) {
-                var catconfig = global[_ENUM.MAP_KEY],
+                var catconfig = _map,
                     modulepath;
                 if (catconfig) {
                     modulepath = ( catconfig[module] || module );
@@ -45,7 +55,7 @@ module.exports = function() {
             };
 
             // Map index for CAT modules
-            global[_ENUM.MAP_KEY] = {};
+            _map = {};
 
             /**
              * Mapper's require implementation
@@ -53,10 +63,10 @@ module.exports = function() {
              * @param module The module key
              * @returns {*}
              */
-            global[_methodname] = function (module) {
+            _setGlobal(_methodname, function (module) {
 
                 return require(_module(module));
-            };
+            });
 
             _me.map(data);
 
@@ -72,13 +82,13 @@ module.exports = function() {
          */
         map: function(data) {
 
-            var map = global[_ENUM.MAP_KEY],
+            var map = _map,
                 key;
 
             if (map && data) {
                 for (key in data) {
                     if (key && data.hasOwnProperty(key)) {
-                        global[_ENUM.MAP_KEY][key] = data[key];
+                        _map[key] = data[key];
                     }
                 }
             }
@@ -89,4 +99,4 @@ module.exports = function() {
 
     return _me;
 
-}();
+};
